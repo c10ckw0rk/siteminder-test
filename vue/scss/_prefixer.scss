@@ -1,0 +1,44 @@
+//---------------------------------------
+//** Desc:
+//** Contributors: Daniel Peterson
+//** Created by Dax on 26/01/16.
+//---------------------------------------
+
+/// A mixin to auto vendor prefix
+///
+/// @example scss - prefixer mixin
+///
+/// prefixer(transform, translateX(-105%), true);
+///
+/// @example css - CSS Output
+///   .element {
+///     -webkit-transform: translateX(-105%);
+///     -moz-transform: translateX(-105%);
+///     -ms-transform: translateX(-105%);
+///     -o-transform: translateX(-105%);
+///     transform: translateX(-105%);
+///   }
+///
+/// @param {String} $property
+///     first property to prefix
+/// @param {String} $value
+///     Second property to prefix
+/// @param {Boolean} $both
+///     Whether or not to prefix second param
+
+@mixin prefixer($property:null, $value:null, $both: false) {
+
+    @if ($both) {
+        -webkit-#{$property}: -webkit-#{$value};
+        -moz-#{$property}: -moz-#{$value};
+        -ms-#{$property}: -ms-#{$value};
+        -o-#{$property}: -o-#{$value};
+    } @else {
+        -webkit-#{$property}: #{$value};
+        -moz-#{$property}: #{$value};
+        -ms-#{$property}: #{$value};
+        -o-#{$property}: #{$value};
+    }
+
+    #{$property}: #{$value};
+}

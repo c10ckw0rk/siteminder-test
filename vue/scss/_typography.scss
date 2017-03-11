@@ -1,0 +1,126 @@
+@import 'imports';
+
+$base-line: baseline(3);
+$base-line-height: baseline(3);
+$base-font-size: baseline(2);
+$h1-big: 48px;
+$h2-big: 32px;
+$h3-big: 24px;
+$h4-big: 22px;
+$h5-big: $base-font-size;
+$h6-big: $base-font-size;
+$h1: 38px;
+$h2: 26px;
+$h3: 20px;
+$h4: 18px;
+$h5: $base-font-size;
+$h6: $base-font-size;
+
+%font-style {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: normal;
+    padding: 0;
+}
+
+@mixin font-style($font-size, $line-height: $base-line-height, $margin: 0 0 baseline(3)) {
+    font-size: $font-size;
+    line-height: $line-height;
+    margin: $margin;
+    @extend %font-style;
+    @content;
+}
+
+
+.h1-size, h1 {
+    @include font-style($h1, baseline(6));
+}
+
+@include breakpoint(sm) {
+    .h1-size, h1 {
+        @include font-style($h1-big, baseline(8));
+    }
+}
+
+
+.h2-size, h2 {
+    @include font-style($h2, baseline(4));
+}
+
+@include breakpoint(sm) {
+    .h2-size, h2 {
+        @include font-style($h2-big, baseline(5));
+    }
+}
+
+.h3-size, h3 {
+    @include font-style($h3, baseline(4));
+}
+
+@include breakpoint(sm) {
+    .h3-size, h3 {
+        @include font-style($h3-big, baseline(4));
+    }
+}
+
+.h4-size, h4 {
+    @include font-style($h4);
+    font-weight: bold;
+}
+
+@include breakpoint(sm) {
+    .h4-size, h4 {
+        @include font-style($h4-big);
+    }
+}
+
+.h5-size, h5 {
+    @include font-style($h5);
+}
+
+@include breakpoint(sm) {
+    .h5-size, h5 {
+        @include font-style($h5-big);
+    }
+}
+
+.h6-size, h6 {
+    @include font-style($h6);
+}
+
+@include breakpoint(sm) {
+    .h6-size, h6 {
+        @include font-style($h6-big) {
+            font-weight: lighter;
+        }
+    }
+}
+
+a {
+    color: #333;
+}
+
+p {
+    @include font-style($base-font-size);
+}
+
+ol, ul {
+    padding-left: baseline(4);
+    padding-bottom: baseline(2);
+}
+
+li {
+    margin-bottom: baseline(1);
+}
+
+li ol, li ul {
+    margin-top: 0;
+}
+
+.tiny-text {
+    @include font-style(13px);
+}
+
+.label-text {
+    @include font-style(15px);
+}

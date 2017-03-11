@@ -1,0 +1,9 @@
+//---------------------------------------
+//** Desc: Baseline function
+//** Contributors: Daniel Peterson
+//** Created by Dax on 26/01/16.
+//---------------------------------------
+
+@function baseline($num) {
+    @return 8px * $num;
+}

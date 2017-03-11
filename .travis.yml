@@ -1,0 +1,5 @@
+language: node_js
+node_js:
+  - "6"
+env:
+  - GOOGLE_API_KEY=AIzaSyCu4WGFRPXn7d8-0OFbv8ApFD3NMDEmQSU

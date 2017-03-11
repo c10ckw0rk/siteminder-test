@@ -1,0 +1,37 @@
+@mixin breakpoint($point) {
+    // Custom, iPhone Retina */
+    @if ($point == xs) {
+        @media only screen and (max-width: 767px) {
+            @content
+        }
+
+    }
+
+    // Extra Small Devices, Phones
+
+    @if ($point == sm) {
+        @media only screen and (min-width: 768px) {
+            @content
+        }
+
+    }
+
+    // Small Devices, Tablets
+
+    @if ($point == md) {
+        @media only screen and (min-width: 992px) {
+            @content
+        }
+
+    }
+
+    // Large Devices, Wide Screens
+
+    @if ($point == lg) {
+        @media (min-width: 1200px) {
+            @content
+        }
+
+    }
+
+}
