@@ -105,5 +105,5 @@ With more time would configure unit tests for vue components using webpack. Have
 
 #### UX
 
-Front end is really lacking here, usually would have a much nicer interface. I can provide examples of other UI's I have worked on. Wanted to just focus on the technical side of things.
+Front end is really lacking here, usually would have a much nicer interface. I can provide examples of other UI's I have worked on. Wanted to just focus on the technical side of things. Usually would include a css loader as well while waiting for content to load.
 
